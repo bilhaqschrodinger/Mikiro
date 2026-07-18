@@ -12,21 +12,23 @@ export default function AuthBackground({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen relative flex items-center justify-center p-4 bg-[#0a0a0a]">
-      <div className="absolute inset-0 overflow-hidden">
+    <div className="min-h-screen w-full relative flex items-center justify-center p-4">
+      <div
+        className="fixed inset-0 z-0"
+        style={{ width: "100vw", height: "100vh" }}
+      >
         <LaserFlow
           color="#6366f1"
-          horizontalBeamOffset={0.5}
-          verticalBeamOffset={-0.2}
-          fogIntensity={0.3}
-          wispDensity={0.8}
-          wispIntensity={3.0}
-          flowSpeed={0.3}
+          horizontalBeamOffset={0.1}
+          verticalBeamOffset={0.0}
+          fogIntensity={0.45}
+          wispDensity={1}
+          wispIntensity={5.0}
+          flowSpeed={0.35}
+          style={{ width: "100%", height: "100%" }}
         />
       </div>
-      <div className="relative z-10 w-full max-w-sm">
-        {children}
-      </div>
+      <div className="relative z-10 w-full max-w-sm">{children}</div>
     </div>
   );
 }
